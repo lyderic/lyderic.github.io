@@ -8,11 +8,11 @@ else
 fi
 
 function baketech() {
-   jbake tech frontpage/tech
+   jbake tech output/tech
 }
 
 function bakelitt() {
-   jbake litt frontpage/litt
+   jbake litt output/litt
 }
 
 function gitupdate() {
