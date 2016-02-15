@@ -14,7 +14,7 @@
 			<p><em th:text='${#dates.format(content.date,"dd MMMM yyyy")}'>date</em></p>
 		
 			<p th:utext='${content.body}'>body</p>
-
+		
 			<hr />
 			
 		</div>

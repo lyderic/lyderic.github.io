@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 	    <meta charset="utf-8" />
-	    <title>Debloat docker</title>
+	    <title>Do you need Docker if you have JARs?</title>
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	    <meta name="description" content="" />
 	    <meta name="author" content="" />
@@ -76,13 +76,13 @@
 		<div class="container">
 	
 			<div class="page-header">
-				<h1>Debloat docker</h1>
+				<h1>Do you need Docker if you have JARs?</h1>
 			</div>
 		
-			<p><em>11 February 2016</em></p>
+			<p><em>12 February 2016</em></p>
 		
-			<p><p>I recently read about docker wanting to move all their official images from the likes of Debian/Ubuntu/CentOS to Alpine Linux. This is a fantastic idea!</p><p>Alpine is very small, it is similar to the busybox image, but it includes a package manager (apk, similar to apt-get and yum) and the distribution provides about 6,000 packages, including openjdk (a must for a Spring developer like me).</p><p>The micro images are very easy to use, we go back to the roots of Linux, before systemd, even before sysv ;-) Alpine is now my base image for everything except when I <em>need</em> to have glibc, that is to say when I need to run binaries compiled against it, and it would be too much hassle to recompile against musl (the libc used by Alpine).</p></p>
-
+			<p><p>I am currently playing a lot with Docker and I really like it, weird as it is for a seasoned sysadmin like me. Once you have solved the init PID1 problem (which is easily done with Alpine and Busybox's init), then Docker is a convincing technology for many use cases.</p><p>But I still fail to really appreciate the need for it if all you use are single, fat, executable JARs.</p><p>I build all my application as single JARs. The only dependency I have is the JVM and really, it is not too difficult to keep it current accross all your machines, being metal, KVM or OpenVZ, especially with the help of puppet. So... what are the benefits of encapsulating an executable JAR into a Docker container?</p><p>If things are carefully designed using technologies like Spring Boot, your micro service fits altogether in one JAR and an appropriate application.properties should suffice to run the beast.</p><p>On the other hand, Docker is very well suited for some scenarios. For example if you use python 3 and all the host offers is a python 2 interpreter, if you have separate dependencies and so on.</p><p>But as far as JARs are concerned, I will stick to no Docker for the moment.</p></p>
+		
 			<hr />
 			
 		</div>
