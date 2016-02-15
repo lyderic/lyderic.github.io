@@ -1,0 +1,100 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lydéric's Technical Blog</title>
+    <link>http://www.lyderic.com/tech</link>
+    <atom:link href="http://www.lyderic.com/tech/feed.xml" rel="self" type="application/rss+xml"></atom:link>
+    <description>Lydéric's Technical Pages, in English</description>
+    <language>en-gb</language>
+    <pubDate>Mon, 15 Feb 2016 17:11:59 +0000</pubDate>
+    <lastBuildDate>Mon, 15 Feb 2016 17:11:59 +0000</lastBuildDate>
+
+    <item>
+      <title>Tabular display in Linux terminal</title>
+      <link>http://www.lyderic.com/tech/blog/2016/02_february/15.html</link>
+      <pubDate>Mon, 15 Feb 2016 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2016/02_february/15.html</guid>
+      <description>&amp;lt;p&amp;gt;A command I like in Linux is &amp;#39;column&amp;#39;. It allows the display of ordered data (typically CSV) in a tabular way in the Linux terminal.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;For example, assume you have the following file:&amp;lt;/p&amp;gt;
+&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;$ cat data
+server|location|usage
+mars.example.com|New York|web
+saturn.example.com|Beijing|database
+mercury.example.com|Sidney|nosql
+&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;p&amp;gt;You can display this file nicely as follows:&amp;lt;/p&amp;gt;
+&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;$ column -t -s &amp;amp;#39;|&amp;amp;#39; data
+server               location  usage
+mars.example.com     New York  web
+saturn.example.com   Beijing   database
+mercury.example.com  Sidney    nosql
+&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;p&amp;gt;&amp;lt;em&amp;gt;-t&amp;lt;/em&amp;gt; indicates that we want tabular display and &amp;lt;em&amp;gt;-s&amp;lt;/em&amp;gt; specifies the separator we use. I like to use the pipe (&amp;#39;|&amp;#39;) as data separator, but usually the semi colon (&amp;#39;;&amp;#39;) is used for CSV data.&amp;lt;/p&amp;gt;</description>	  
+    </item>
+
+    <item>
+      <title>base64 images in HTML pages</title>
+      <link>http://www.lyderic.com/tech/blog/2016/02_february/12-01.html</link>
+      <pubDate>Fri, 12 Feb 2016 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2016/02_february/12-01.html</guid>
+      <description>&amp;lt;p&amp;gt;I have found out that it is possible to embed images in a HTML page as base64 strings! I like the idea of having everything as text. I use it to display the &amp;lt;em&amp;gt;favicon&amp;lt;/em&amp;gt; on the front page of my web site.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;This is very easy:&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;Convert your favicon to base64:&amp;lt;/p&amp;gt;
+&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;$ base64 -w 0 favicon.ico
+&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;p&amp;gt;The &amp;lt;em&amp;gt;-w&amp;lt;/em&amp;gt; switch is to have the whole string as a single line.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;Include this entry in the &amp;lt;em&amp;gt;&amp;amp;lt;head&amp;amp;gt;&amp;lt;/em&amp;gt; section of your HTML page:&amp;lt;/p&amp;gt;
+&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;&amp;amp;lt;link href=&amp;amp;quot;data:image/x-icon;base64,AAABAAE...fAAD//wAA&amp;amp;quot; rel=&amp;amp;quot;icon&amp;amp;quot; type=&amp;amp;quot;image/x-icon&amp;amp;quot; /&amp;amp;gt;
+&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;p&amp;gt;I cut the base64 string a little for better visibility.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;Another cool use of base64.&amp;lt;/p&amp;gt;</description>	  
+    </item>
+
+    <item>
+      <title>Do you need Docker if you have JARs?</title>
+      <link>http://www.lyderic.com/tech/blog/2016/02_february/12.html</link>
+      <pubDate>Fri, 12 Feb 2016 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2016/02_february/12.html</guid>
+      <description>&amp;lt;p&amp;gt;I am currently playing a lot with Docker and I really like it, weird as it is for a seasoned sysadmin like me. Once you have solved the init PID1 problem (which is easily done with Alpine and Busybox&amp;#39;s init), then Docker is a convincing technology for many use cases.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;But I still fail to really appreciate the need for it if all you use are single, fat, executable JARs.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;I build all my application as single JARs. The only dependency I have is the JVM and really, it is not too difficult to keep it current accross all your machines, being metal, KVM or OpenVZ, especially with the help of puppet. So... what are the benefits of encapsulating an executable JAR into a Docker container?&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;If things are carefully designed using technologies like Spring Boot, your micro service fits altogether in one JAR and an appropriate application.properties should suffice to run the beast.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;On the other hand, Docker is very well suited for some scenarios. For example if you use python 3 and all the host offers is a python 2 interpreter, if you have separate dependencies and so on.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;But as far as JARs are concerned, I will stick to no Docker for the moment.&amp;lt;/p&amp;gt;</description>	  
+    </item>
+
+    <item>
+      <title>Busybox HTTPD</title>
+      <link>http://www.lyderic.com/tech/blog/2016/02_february/11-01.html</link>
+      <pubDate>Thu, 11 Feb 2016 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2016/02_february/11-01.html</guid>
+      <description>&amp;lt;p&amp;gt;I love busybox. It is super simple to compile, fully customizable. It even includes a web server! These are the steps I took to make it work, from source.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;Make sure you have the following packages installed on your machine: git, gcc, make&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;Clone the repo:&amp;lt;/p&amp;gt;
+&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;$ git clone git://busybox.net/busybox.git
+&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;p&amp;gt;Compile the source:&amp;lt;/p&amp;gt;
+&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;$ cd busybox
+$ make deconfig
+$ make
+&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;p&amp;gt;If you have multicore, you can speed up compilation by running (for example if you have 4 cores):&amp;lt;/p&amp;gt;
+&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;$ make -j 4
+&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;p&amp;gt;Once done, you have an executable called &amp;#39;busybox&amp;#39;. Run it and you will see all the commands included. You run a command as follows, for example to open a vi text editor:&amp;lt;/p&amp;gt;
+&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;$ ./busybox vi
+&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;p&amp;gt;Now, to run a web server, the command is called &amp;lt;em&amp;gt;httpd&amp;lt;/em&amp;gt;. Each command has a short help, called with the --help switch. For httpd:&amp;lt;/p&amp;gt;
+&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;$ ./busybox httpd --help
+BusyBox v1.25.0.git (2016-02-11 12:45:41 GMT) multi-call binary.
+
+Usage: httpd [-ifv[v]] [-c CONFFILE] [-p [IP:]PORT] [-u USER[:GRP]] [-r REALM] [-h HOME]
+or httpd -d/-e/-m STRING
+
+Listen for incoming HTTP requests
+
+        -i              Inetd mode
+        -f              Don&amp;amp;#39;t daemonize
+        -v[v]           Verbose
+        -p [IP:]PORT    Bind to IP:PORT (default *:80)
+        -u USER[:GRP]   Set uid/gid after binding to port
+        -r REALM        Authentication Realm for Basic Authentication
+        -h HOME         Home directory (default .)
+        -c FILE         Configuration file (default {/etc,HOME}/httpd.conf)
+        -m STRING       MD5 crypt STRING
+        -e STRING       HTML encode STRING
+        -d STRING       URL decode STRING
+&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;p&amp;gt;So, you can launch a web server for example like this:&amp;lt;/p&amp;gt;
+&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;$ ./busybox httpd -p 8000 -h /path/to/www/pages
+&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;p&amp;gt;There are many more possibilities, including setting up mime types, running CGI scripts etc. &amp;lt;a href=&amp;quot;https://wiki.openwrt.org/doc/howto/http.httpd&amp;quot;&amp;gt;More information can be found on the OpenWrt wiki site&amp;lt;/a&amp;gt; where the configuration file is explained in details.&amp;lt;/p&amp;gt;</description>	  
+    </item>
+
+    <item>
+      <title>Debloat docker</title>
+      <link>http://www.lyderic.com/tech/blog/2016/02_february/11.html</link>
+      <pubDate>Thu, 11 Feb 2016 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">blog/2016/02_february/11.html</guid>
+      <description>&amp;lt;p&amp;gt;I recently read about docker wanting to move all their official images from the likes of Debian/Ubuntu/CentOS to Alpine Linux. This is a fantastic idea!&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;Alpine is very small, it is similar to the busybox image, but it includes a package manager (apk, similar to apt-get and yum) and the distribution provides about 6,000 packages, including openjdk (a must for a Spring developer like me).&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;The micro images are very easy to use, we go back to the roots of Linux, before systemd, even before sysv ;-) Alpine is now my base image for everything except when I &amp;lt;em&amp;gt;need&amp;lt;/em&amp;gt; to have glibc, that is to say when I need to run binaries compiled against it, and it would be too much hassle to recompile against musl (the libc used by Alpine).&amp;lt;/p&amp;gt;</description>	  
+    </item>
+
+  </channel> 
+</rss>

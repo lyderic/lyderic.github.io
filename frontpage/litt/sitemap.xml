@@ -1,0 +1,22 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <url>
+        <loc>http://www.lyderic.com/litt/about.html</loc>
+        <lastmod>2016-02-11</lastmod>
+    </url>
+    <url>
+        <loc>http://www.lyderic.com/litt/chess.html</loc>
+        <lastmod>2016-02-11</lastmod>
+    </url>
+    <url>
+        <loc>http://www.lyderic.com/litt/blog/2016/02_february/15.html</loc>
+        <lastmod>2016-02-15</lastmod>
+    </url>
+    <url>
+        <loc>http://www.lyderic.com/litt/blog/2016/02_february/12.html</loc>
+        <lastmod>2016-02-12</lastmod>
+    </url>
+    <url>
+        <loc>http://www.lyderic.com/litt/blog/2016/02_february/11-01.html</loc>
+        <lastmod>2016-02-11</lastmod>
+    </url>
+</urlset>

@@ -1,2 +1,2 @@
 # lyderic.github.io
-Cybermoped's Marketing Site
+Lyderic's Blog

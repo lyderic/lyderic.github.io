@@ -1,0 +1,49 @@
+#!/bin/bash
+
+if [ -z $1 ]
+then
+   item=all
+else
+   item=$1
+fi
+
+function baketech() {
+   jbake tech frontpage/tech
+}
+
+function bakelitt() {
+   jbake litt frontpage/litt
+}
+
+function gitupdate() {
+   git pull
+   git add -A
+   git commit -m 'jbake update for publish'
+   git push
+   ssh ji  "cd blog ; git pull"
+   ssh nyc "cd blog ; git pull"
+   ssh alt "cd blog ; git pull"
+}
+
+case "$item" in
+   all|-all|--all|a|-a)
+      baketech
+      bakelitt
+      gitupdate
+   ;;
+   tech|-tech|--tech|t|-t)
+      baketech
+      gitupdate
+   ;;
+   litt|-litt|--litt|l|-l)
+      bakelitt
+      gitupdate
+   ;;
+   git|--git|g|-g)
+      gitupdate
+   ;;
+   *)
+      echo "Invalid!"
+      exit 23
+   ;;
+esac
