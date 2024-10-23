@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs de Lydéric on De Mundis Lyderici</title>
+    <link>https://lyderic.com/blog/</link>
+    <description>Recent content in Blogs de Lydéric on De Mundis Lyderici</description>
+    <generator>Hugo</generator>
+    <language>fr-FR</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://lyderic.com/blog/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

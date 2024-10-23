@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Continue your loops in lua | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>Continue your loops in lua</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2016-11-10T15:06:27&#43;00:00">10 novembre 2016</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <p>I am so used to the <em>continue</em> word in Java and C that I was surprised to see it absent in lua.</p>
+<p>It is however relatively easy to implement it with a good ol&rsquo; <em>goto.</em></p>
+<p>Here is a (rather stupid) example. We get a directory listing and we filter out the hidden files (starting with a dot):</p>
+<pre><code>local h = io.popen(&quot;ls -a&quot;)
+for line in h:lines() do
+   if string.match(line, &quot;^%.&quot;) then goto continue end
+   print(line)
+   ::continue::
+end
+h:close()
+</code></pre>
+
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>

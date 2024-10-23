@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Version Control SQLite files in Git | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>Version Control SQLite files in Git</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2024-10-23T07:31:50&#43;02:00">23 octobre 2024</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <p>To put sqlite3 files under version control, I do the following.</p>
+<p>My sqlite3 files have the extension &lsquo;.db&rsquo;.</p>
+<ol>
+<li>I added these lines to ~/.gitconfig:</li>
+</ol>
+<pre tabindex="0"><code>[filter &#34;sqlite3&#34;]
+	clean = &#34;f() { tmpfile=$(mktemp); cat - &gt; $tmpfile; sqlite3 $tmpfile .dump; rm $tmpfile; }; f&#34;
+	smudge = &#34;f() { tmpfile=$(mktemp); sqlite3 $tmpfile; cat $tmpfile; rm $tmpfile; }; f&#34;
+	required = true
+</code></pre><ol start="2">
+<li>In each git repositories where there is (are) db file(s), I add a file called .gitattribute at the root of the directory whith this content:</li>
+</ol>
+<pre tabindex="0"><code>*.db filter=sqlite3
+</code></pre><p>Thanks to <a href="https://trenta3.gitlab.io/note:storing-sqlite-databases-under-git/">this blog</a>!</p>
+
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>

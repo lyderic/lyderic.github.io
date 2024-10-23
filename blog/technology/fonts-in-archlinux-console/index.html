@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fonts in Archlinux Console | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>Fonts in Archlinux Console</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2024-03-08T07:58:43&#43;01:00">8 mars 2024</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <p>Maybe it&rsquo;s because I&rsquo;m becoming older, but I can&rsquo;t stand the default font size of the Archlinux console anymore. Why so small?</p>
+<p>I am talking about the console you get when you boot an Archlinux ISO, just before you run <em>archinstall</em> or you start having fun with doing it all <em>a la mano</em>.</p>
+<p>To make it bigger:</p>
+<ol>
+<li>
+<p>Choose a font a in <strong>/usr/share/kdb/consolefonts</strong>. You might have to try a few. I found the ones starting with &ldquo;ter-&rdquo; to be to my liking.</p>
+</li>
+<li>
+<p>Set the font as follows:</p>
+</li>
+</ol>
+<pre tabindex="0"><code># setfont ter-228n
+</code></pre><ol start="3">
+<li>Also, set your keyboard (UK keyboard in my case):</li>
+</ol>
+<pre tabindex="0"><code># loadkeys uk
+</code></pre><ol start="4">
+<li>To make these changes permanent (and other setups), write them in <strong>/etc/vconsole.conf</strong>. This is how it looks on my Archlinux workstation:</li>
+</ol>
+<pre tabindex="0"><code>KEYMAP=uk
+FONT=ter-228n
+</code></pre>
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>

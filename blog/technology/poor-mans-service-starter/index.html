@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Poor Man&#39;s Service Starter | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>Poor Man&#39;s Service Starter</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2016-03-07T16:45:34&#43;00:00">7 mars 2016</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <p>There are situations where there is no easy init system on a box. Most of the time, it is because we are dealing with cheap VPSes which don&rsquo;t even have enough memory to run systemd. However, you want to do a simple and straightforward thing: start a light service.</p>
+<p>sysvinit is a very good service starter, but not really suitable as far as user services are concerned. You wouldn&rsquo;t start your HTTPD by putting an entry in /etc/inittab. You could write rc scripts, which time consuming if you want to do things right. Or, you could install so-called <a href="https://en.wikipedia.org/wiki/Process_supervision">service managers a.k.a. process supervisors</a>. But there is a simpler solution: use plain old cron.</p>
+<p>In a crontab, instead of the &ldquo;5-star&rdquo; field, use &ldquo;@reboot&rdquo; and you&rsquo;re done. For example:</p>
+<pre><code>$ crontab -l
+@reboot /path/to/service
+</code></pre>
+<p>Please note that it works very well on Red Hat and associated distros (CentOS&hellip;) But it seems not to be the case in other environments. Anyway, give it a try!</p>
+
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>

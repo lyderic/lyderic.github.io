@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Simplified getopt for lua | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>Simplified getopt for lua</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2016-11-17T18:34:42&#43;00:00">17 novembre 2016</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <p>Lua doesn&rsquo;t include getopt. I have written this very simple implementation. It is actually a simplified version of <a href="https://lua-users.org/wiki/AlternativeGetOpt">AlternativeGetOpt</a>. It is usable but <em>absolutely not user-proof</em>! Good enough for your own scripts though.</p>
+<pre><code>function getopt(o)
+  local p = {}
+  for k,v in ipairs(arg) do
+    if v:byte(1) == 45 then
+      local l = v:sub(2,2)
+      if o:match(l) then
+        p[l] = arg[k+1]
+      else
+        p[l] = true
+      end
+    end
+  end
+  return p
+end
+</code></pre>
+<p>You can test for example with the following <em>main</em> function:</p>
+<pre><code>function main()
+   local opts = getopt(&quot;up&quot;)
+   local user = opts.u and opts.u or &quot;default&quot;
+   local pass = opts.p and opts.p or &quot;secret&quot;
+   local root = opts.a and true or false
+   print(user, pass, root)
+end
+</code></pre>
+<p>Usage examples:</p>
+<pre><code>$ getopt
+default	secret	false
+$ getopt -u lyderic
+lyderic	secret	false
+$ getopt -u lyderic -p password
+lyderic	password	false
+$ getopt -a -u lyderic -p password
+lyderic	password	true
+$ getopt -a -u lyderic -w
+lyderic	secret	true
+</code></pre>
+
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>

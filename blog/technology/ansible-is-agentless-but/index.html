@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ansible is agentless, but... | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>Ansible is agentless, but...</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2016-06-23T16:15:02&#43;00:00">23 juin 2016</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <p>Ansible is supposed to be agentless. This is great and this is certainly a killer feature.</p>
+<p>However, that doesn&rsquo;t mean that there is no requirements on the client side, as I have just found out. I wanted to simply ping a client, like so :</p>
+<pre><code>$ ansible remotehost -m ping
+remotehost | FAILED! &gt; {
+    &quot;changed&quot;: false, 
+    &quot;failed&quot;: true, 
+    &quot;module_stderr&quot;: &quot;&quot;, 
+    &quot;module_stdout&quot;: &quot;sh: /usr/bin/python: not found\r\n&quot;, 
+    &quot;msg&quot;: &quot;MODULE FAILURE&quot;, 
+    &quot;parsed&quot;: false
+}
+</code></pre>
+<p>Problem: the <em>remotehost</em> machine is a light Alpine Linux container. <em>Very</em> light. So light that it doesn&rsquo;t have any interpreter : no perl, no php, no ruby&hellip; not even python !</p>
+<p>So to manage your clients, you have to be prepared to have a big chunk of some interpreter, being ruby (for puppet, for example), or python.</p>
+<p>I am not a huge fan of interpreted languages. But if I <em>have</em> to install one, I guess python is not the worst choice. Moreover, it is installed by default on CentOS, Debian, etc. And also, did I mention that Ansible is agentless? ;—)</p>
+
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>

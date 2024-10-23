@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>First glitch with musl | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>First glitch with musl</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2017-03-31T09:53:07&#43;00:00">31 mars 2017</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <h5 id="edit-23-april-2024-a-musl-version-is-now-included-in-sqlite-jdbc-this-article-is-obsolete-i-keep-it-for-historical-reasons">Edit 23 April 2024: A musl version is now included in sqlite-jdbc. This article is obsolete. I keep it for historical reasons.</h5>
+<p>I have been using alpine linux images on docker for some time and until today, I have never encountered any problem.</p>
+<p>What I am facing today is due to musl, the excellent glibc alternative used by alpine to keep the system very compact.</p>
+<p>I have started to use sqlite as backend for simple lua applications and I liked it so much that I am now using it for my java/spring project as well.</p>
+<p>To talk to it, I use the following JDBC driver: <a href="https://github.com/xerial/sqlite-jdbc">sqlite-jdbc</a></p>
+<p>This driver is very efficient because it embeds a compiled version of the sqlite C library into its jar. So far so good, they provide shared libs for all operating systems and processors: from Windows 32bit to Linux ARMv7, MacOSX etc.</p>
+<p>Even though the Linux libs cover all major processor architectures (Inter 32bit or 64bit and different ARM variants), they have something in common: they are compiled against glibc!</p>
+<p>So this driver doesn&rsquo;t work by default on alpine linux.</p>
+<p>I have at least two solutions:</p>
+<ol>
+<li>Build it by hand (so I cannot draw it automatically from maven central)</li>
+<li>Use its pure java implementation (but then I sacrifice the nice performance offered by the compiled lib)</li>
+</ol>
+<p>Anyway, this is not a showstopper for me using sqlite in Java, but it makes things a little bit more complicated.</p>
+<p><strong>Edit 23 April 2024</strong>:</p>
+
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>vim with lua | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>vim with lua</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2016-11-07T17:15:47&#43;00:00">7 novembre 2016</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <p>This is a log of the steps I took to compile vim with lua support. I wrapped everything up in a script that I called &rsquo;luavim&rsquo;. I have tested it on CentOS/RedHat, Debian/Ubuntu and Alpine Linux.</p>
+<p>Dependencies are:</p>
+<ul>
+<li>
+<p><strong>Libraries</strong>: libreadline, libcurses, glibc/musl</p>
+</li>
+<li>
+<p><strong>Packages</strong>: git, gcc, make</p>
+</li>
+</ul>
+<p>To install the dependencies for <strong>Alpine Linux</strong>:</p>
+<pre><code># apk add musl-dev git gcc make readline-dev ncurses-dev
+</code></pre>
+<p>To install the dependencies for <strong>Debian/Ubuntu</strong>:</p>
+<pre><code># apt install gcc make libreadline-dev libncurses-dev
+</code></pre>
+<p>To install the dependencies for <strong>CentOS/RedHat</strong>, you can run:</p>
+<pre><code># yum install git gcc make readline-devel ncurses-devel
+</code></pre>
+<p>Everything gets installed into /usr/local. The user running this script must have sudo.</p>
+<p>This is the script:</p>
+<pre><code>#!/bin/sh
+
+operator=$(whoami)
+srcdir=/opt/src
+
+main() {
+
+   if [ -z $1 ]
+   then
+      usage
+   fi
+
+   init
+
+   case &quot;$1&quot; in
+      a) buildlua; buildvim ;;
+      l) buildlua ;;
+      v) buildvim ;;
+      r) reset ;;
+      *) echo &quot;invalid&quot;; usage ;;
+   esac
+}
+
+init() {
+   if [ ! -d ${srcdir} ]
+   then
+      sudo mkdir -pv ${srcdir}
+   fi
+   sudo chown -R ${operator} ${srcdir}
+}
+
+buildlua() {
+
+   cd ${srcdir}
+   if [ ! -d lua ]
+   then
+      echo &quot;Cloning github lua repository...&quot;
+      git clone https://github.com/lua/lua.git
+   fi
+
+   cd ${srcdir}/lua
+   make clean
+   git pull
+   sudo make uninstall
+
+   make linux -j 4
+   sudo make install
+
+   lua -v
+
+}
+
+buildvim() {
+
+   cd ${srcdir}
+   if [ ! -d vim ]
+   then
+      echo &quot;Cloning github lua repository...&quot;
+      git clone https://github.com/vim/vim.git
+   fi
+   
+   cd ${srcdir}/vim
+   make clean
+   git pull
+
+   ./configure 
+   --with-compiledby=lyderic 
+   --with-features=huge 
+   --enable-luainterp 
+   --with-lua-prefix=/usr/local 
+   --enable-fail-if-missing
+
+   sudo make uninstall
+   make -j 4
+   sudo make install
+
+}
+
+reset() {
+   cd ${srcdir}/lua
+   sudo make uninstall
+   cd ${srcdir}/vim
+   sudo make uninstall
+   sudo rm -rfv ${srcdir}
+}
+
+usage() {
+   echo &quot;Usage: $(basename $0) &quot;
+   echo &quot;Actions:&quot;
+   echo &quot; a  build lua and vim&quot;
+   echo &quot; l  build lua only&quot;
+   echo &quot; v  build vim only&quot;
+   echo &quot; r  wipe everything&quot;
+   exit 2
+}
+
+main $@
+</code></pre>
+
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>

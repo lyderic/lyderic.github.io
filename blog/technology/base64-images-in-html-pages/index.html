@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>base64 images in HTML pages | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>base64 images in HTML pages</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2016-02-12T16:47:03&#43;00:00">12 février 2016</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <p>I have found out that it is possible to embed images in a HTML page as base64 strings! I like the idea of having everything as text. You can use it to display the <em>favicon</em> on the front page of a web site.</p>
+<p>This is very easy.</p>
+<ul>
+<li>Convert your favicon to base64:</li>
+</ul>
+<pre tabindex="0"><code>$ base64 -w 0 favicon.ico
+</code></pre><p>The <em>-w</em> switch is to have the whole string as a single line.</p>
+<ul>
+<li>Include this entry in the <em><!-- raw HTML omitted --></em> section of your HTML page:</li>
+</ul>
+<pre tabindex="0"><code>&lt;link href=&#34;data:image/x-icon;base64,AAABAAE...fAAD//wAA&#34; rel=&#34;icon&#34; type=&#34;image/x-icon&#34; /&gt;
+</code></pre><p>I cut the base64 string a little for better visibility.</p>
+<p>Another cool use of base64.</p>
+
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>

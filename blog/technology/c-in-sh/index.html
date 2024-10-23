@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>C in sh | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>C in sh</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2016-04-14T16:22:02&#43;00:00">14 avril 2016</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <p>I am currently reading the best book about the C language since the K&amp;R. It&rsquo;s called <em>21st Century C</em>, it was written by Ben Klemens and published by <a href="https://shop.oreilly.com/product/0636920033677.do">O&rsquo;Reilly</a>.</p>
+<p>There is one gem per page in this book. From big-picture tips to nice little hacks. My favority so far can be found on page 29. It explains how one can embed a small C program into a shell script.</p>
+<p>In a nutshell, this is how you do it:</p>
+<pre><code>#!/bin/sh
+
+gcc -xc - &gt;&gt; END_OF_C_SECTION
+#include &lt;stdio.h&gt;
+int main() {
+   printf(&quot;C inside a shell script!\n&quot;);
+}
+END_OF_C_SECTION
+./a.out
+</code></pre>
+<p>&lsquo;-xc&rsquo; indicates to cc that what follows in C code. Also notice the dash (&rsquo;-&rsquo;) that tells gcc to accept standard input instead of a file.</p>
+<p>In a footnote, Klemens points to a complete implementation of this idea by RhysU, who <a href="https://github.com/RhysU/c99sh">has put his work on github</a>.</p>
+
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>

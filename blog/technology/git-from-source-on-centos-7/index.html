@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>git from source on Centos 7 | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>git from source on Centos 7</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2016-11-12T13:21:48&#43;00:00">12 novembre 2016</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <p><img src="https://rajivpandit.files.wordpress.com/2013/09/git-logo.png?w=156" alt="git logo"></p>
+<p>As for many packages, git is fairly old on CentOS 7. The version they provide lacks a feature that I rely on, namely the <em>-C</em> switch, to be able to call git anywhere, without having to <em>cd</em> to the git directory first.</p>
+<p>These are the steps I took to build git on CentOS 7:</p>
+<pre><code>$ yum -y install gcc make gettext-devel openssl-devel \
+  perl-devel curl-devel expat-devel
+$ curl https://www.kernel.org/pub/software/scm/git/git-2.10.2.tar.gz \
+| tar xzf -
+$ cd git-2.10.2
+$ make prefix=/usr/local -j $(nproc)
+$ make install prefix=/usr/local
+$ git --version
+</code></pre>
+
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>

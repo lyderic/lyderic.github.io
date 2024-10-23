@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Busybox httpd with basic auth | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>Busybox httpd with basic auth</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2018-11-09T11:21:37&#43;00:00">9 novembre 2018</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <p>For very simple websites, nothing beats running &lsquo;busybox httpd&rsquo;.</p>
+<p>To build it, download the latest source from <a href="https://busybox.net/downloads/">the download page of busybox.net</a>.</p>
+<p>To compile:</p>
+<pre><code>make defconfig
+make
+</code></pre>
+<p>To run with basic authentication:</p>
+<ul>
+<li>Find out the hash of the password you want to use, for example, if
+you want to use the password &lsquo;secret&rsquo;:</li>
+</ul>
+<pre tabindex="0"><code>$ busybox httpd -m secret
+$1$gDqyrCR.$6MSG2JC9CBWRNypWVfuC81
+</code></pre><ul>
+<li>Add the login information to your httpd.conf file. For example, to use user &lsquo;fred&rsquo;:</li>
+</ul>
+<pre tabindex="0"><code>echo &#39;/:fred:$1$gDqyrCR.$6MSG2JC9CBWRNypWVfuC81&#39; &gt; httpd.conf
+</code></pre><ul>
+<li>Start busybox httpd as follows:</li>
+</ul>
+<pre tabindex="0"><code>busybox httpd -v -f -p 5005 -r &#34;Identify yourself:&#34; -c httpd.conf
+</code></pre><p>Options used:</p>
+<pre><code>-v: be verbose
+-f: stay in foreground (don't daemonize)
+-p: port number
+-r: authentication realm (i.e. string you want to show the users)
+-c: configuration file
+</code></pre>
+
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>

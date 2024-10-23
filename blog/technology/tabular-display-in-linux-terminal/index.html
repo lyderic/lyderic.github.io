@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tabular display in Linux terminal | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>Tabular display in Linux terminal</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2016-03-15T16:46:36&#43;00:00">15 mars 2016</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <p>A command I like in Linux is &lsquo;column&rsquo;. It allows the display of ordered data (typically CSV) in a tabular way in the Linux terminal.</p>
+<p>For example, assume you have the following file:</p>
+<pre><code>$ cat data
+server|location|usage
+mars.example.com|New York|web
+saturn.example.com|Beijing|database
+mercury.example.com|Sidney|nosql
+</code></pre>
+<p>You can display this file nicely as follows:</p>
+<pre><code>$ column -t -s '|' data
+server               location  usage
+mars.example.com     New York  web
+saturn.example.com   Beijing   database
+mercury.example.com  Sidney    nosql
+</code></pre>
+<p><em>-t</em> indicates that we want tabular display and <em>-s</em> specifies the separator we use. I like to use the pipe (&rsquo;|&rsquo;) as data separator, but usually the semi colon (&rsquo;;&rsquo;) is used for CSV data.</p>
+
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>

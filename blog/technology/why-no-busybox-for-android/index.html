@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Why no busybox for Android | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>Why no busybox for Android</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2016-03-10T16:45:04&#43;00:00">10 mars 2016</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <p>I found out why there is no busybox by default on Android. It looks like it is for licensing reasons. On the Android command line, the all-in-one executable used is <a href="https://www.landley.net/toybox/about.html">toybox</a> as it is under the BSD license whereas busybox use GPL v2.</p>
+<p>The little drawback of this situation is that toybox is not as feature complete as busybox. For example, it is lacking the vi editor. There is not even <em>ed</em> to quickly edit a file.</p>
+<p>In the end this is not the biggest issue as there are so many busybox installers around. But I also find it a shame that for non technical reasons we have less functionalities. That&rsquo;s not what open source is supposed to be about.</p>
+
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>

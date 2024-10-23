@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Do you need Docker if you have JARs? | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>Do you need Docker if you have JARs?</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2016-02-12T16:47:34&#43;00:00">12 février 2016</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <p>I am currently playing a lot with Docker and I really like it, weird as it is for a seasoned sysadmin like me. Once you have solved the init PID1 problem (which is easily done with Alpine and Busybox&rsquo;s init), then Docker is a convincing technology for many use cases.</p>
+<p>But I still fail to really appreciate the need for it if all you use are single, fat, executable JARs.</p>
+<p>I build all my application as single JARs. The only dependency I have is the JVM and really, it is not too difficult to keep it current accross all your machines, being metal, KVM or OpenVZ, especially with the help of puppet. So&hellip; what are the benefits of encapsulating an executable JAR into a Docker container?</p>
+<p>If things are carefully designed using technologies like Spring Boot, your micro service fits altogether in one JAR and an appropriate application.properties should suffice to run the beast.</p>
+<p>On the other hand, Docker is very well suited for some scenarios. For example if you use python 3 and all the host offers is a python 2 interpreter, if you have separate dependencies and so on.</p>
+<p>But as far as JARs are concerned, I will stick to no Docker for the moment.</p>
+
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>

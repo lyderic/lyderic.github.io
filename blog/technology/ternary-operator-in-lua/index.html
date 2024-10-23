@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ternary operator in lua | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>Ternary operator in lua</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2016-11-10T12:23:50&#43;00:00">10 novembre 2016</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <p>In Java, I very often have to do the following, to mark the plural when needed:</p>
+<pre><code>System.out.printf(&quot;Delivered: %d item%s&quot;, n, n &gt; 1 ? &quot;s&quot;, &quot;&quot;);
+</code></pre>
+<p>In Lua, there is no ternary operator, so this kind of elegant syntax might be compromised in this situation. Fortunately, there is an as nice workaround:</p>
+<pre><code>print(string.format(&quot;Delivered: %d item%s&quot;, n &gt; 1 and &quot;s&quot; or &quot;&quot;))
+</code></pre>
+<p>Thanks to <a href="https://hisham.hm/2011/05/04/luas-and-or-as-a-ternary-operator/">hisham.hm</a></p>
+
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>

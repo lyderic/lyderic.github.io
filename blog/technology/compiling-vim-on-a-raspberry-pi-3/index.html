@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Compiling vim on a Raspberry Pi 3 | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>Compiling vim on a Raspberry Pi 3</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2016-03-02T16:46:07&#43;00:00">2 mars 2016</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <p>Just for the fun of it and in order to test my newly acquired Raspberry Pi 3, I ran the compilation of vim on it to see how its quad-core arm 64-bit processor compares to my main PC Core i5.</p>
+<p>For reference, this is the set of commands I ran on both machines :</p>
+<pre><code>$ git clone https://github.com/vim/vim
+$ cd vim/src
+$ ./configure \
+    --prefix=/opt/vim \
+    --with-compiledby=lyderic \
+    --with-features=huge
+$ time make -j 4
+</code></pre>
+<p>On the Intel Core i5 PC, this took 33 ½ seconds. It is not a super fast CPU but a low-power i5-5250U that runs at 1.60GHz (my desktop is an Intel NUC).</p>
+<p>On the Raspberry Pi, the compilation was achieved in a little more than 2 minutes.</p>
+<p>That said, I found that running the Raspberry Pi as a desktop computer, although not as smooth as a current desktop PC, is convincing. It was not really usable until the last iteration (Model B 2), but now, it seems to be there.</p>
+
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>

@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bienvenue dans les mondes de Lydéric on De Mundis Lyderici</title>
+    <link>https://lyderic.com/</link>
+    <description>Recent content in Bienvenue dans les mondes de Lydéric on De Mundis Lyderici</description>
+    <generator>Hugo</generator>
+    <language>fr-FR</language>
+    <lastBuildDate>Wed, 23 Oct 2024 07:31:50 +0200</lastBuildDate>
+    <atom:link href="https://lyderic.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Version Control SQLite files in Git</title>
+      <link>https://lyderic.com/blog/technology/sqlite-in-git/</link>
+      <pubDate>Wed, 23 Oct 2024 07:31:50 +0200</pubDate>
+      <guid>https://lyderic.com/blog/technology/sqlite-in-git/</guid>
+      <description>sqlite3 filters and attributes</description>
+    </item>
+    <item>
+      <title>Dump Javascript Generated Webpage</title>
+      <link>https://lyderic.com/blog/technology/dump-js-generated-webpage/</link>
+      <pubDate>Mon, 25 Mar 2024 11:47:08 +0100</pubDate>
+      <guid>https://lyderic.com/blog/technology/dump-js-generated-webpage/</guid>
+      <description>use chromium command line</description>
+    </item>
+    <item>
+      <title>Differential backups with rsync</title>
+      <link>https://lyderic.com/blog/technology/differential-backups-with-rsync/</link>
+      <pubDate>Sat, 16 Mar 2024 09:51:47 +0100</pubDate>
+      <guid>https://lyderic.com/blog/technology/differential-backups-with-rsync/</guid>
+      <description>use the &amp;ndash;inplace option</description>
+    </item>
+    <item>
+      <title>Best Way to Compare Two Directories</title>
+      <link>https://lyderic.com/blog/technology/best-way-to-compare-two-directories/</link>
+      <pubDate>Wed, 13 Mar 2024 12:50:20 +0100</pubDate>
+      <guid>https://lyderic.com/blog/technology/best-way-to-compare-two-directories/</guid>
+      <description>use rsync -i</description>
+    </item>
+    <item>
+      <title>Bye Bye Netstat</title>
+      <link>https://lyderic.com/blog/technology/bye-bye-netstat/</link>
+      <pubDate>Sat, 09 Mar 2024 10:17:02 +0100</pubDate>
+      <guid>https://lyderic.com/blog/technology/bye-bye-netstat/</guid>
+      <description>use ss now</description>
+    </item>
+    <item>
+      <title>Fonts in Archlinux Console</title>
+      <link>https://lyderic.com/blog/technology/fonts-in-archlinux-console/</link>
+      <pubDate>Fri, 08 Mar 2024 07:58:43 +0100</pubDate>
+      <guid>https://lyderic.com/blog/technology/fonts-in-archlinux-console/</guid>
+      <description>how to set your console</description>
+    </item>
+    <item>
+      <title>Bienvenue dans les mondes de Lydéric</title>
+      <link>https://lyderic.com/about/</link>
+      <pubDate>Wed, 01 Mar 2023 07:00:00 -0700</pubDate>
+      <guid>https://lyderic.com/about/</guid>
+      <description>&lt;h1 id=&#34;yo-dude&#34;&gt;yo dude&lt;/h1&gt;</description>
+    </item>
+    <item>
+      <title>Installing Texlive on Linux</title>
+      <link>https://lyderic.com/blog/technology/install-texlive/</link>
+      <pubDate>Thu, 09 Feb 2023 14:13:11 +0100</pubDate>
+      <guid>https://lyderic.com/blog/technology/install-texlive/</guid>
+      <description>Use the source, not the package manager</description>
+    </item>
+    <item>
+      <title>Sept milliards</title>
+      <link>https://lyderic.com/blog/observations/sept-milliards/</link>
+      <pubDate>Wed, 11 Mar 2020 16:50:26 +0000</pubDate>
+      <guid>https://lyderic.com/blog/observations/sept-milliards/</guid>
+      <description>Sept milliards d&amp;rsquo;humains : sept milliards de dieux</description>
+    </item>
+    <item>
+      <title>Dopamine</title>
+      <link>https://lyderic.com/blog/observations/dopamine/</link>
+      <pubDate>Thu, 05 Mar 2020 08:57:09 +0000</pubDate>
+      <guid>https://lyderic.com/blog/observations/dopamine/</guid>
+      <description>Notre monde est celui de la dopamine</description>
+    </item>
+    <item>
+      <title>Busybox httpd with basic auth</title>
+      <link>https://lyderic.com/blog/technology/busybox-httpd-with-basic-auth/</link>
+      <pubDate>Fri, 09 Nov 2018 11:21:37 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/busybox-httpd-with-basic-auth/</guid>
+      <description>busybox httpd -m</description>
+    </item>
+    <item>
+      <title>Remplacer la charité par l&#39;argent</title>
+      <link>https://lyderic.com/blog/observations/remplacer-la-charite-par-largent/</link>
+      <pubDate>Wed, 09 May 2018 13:47:05 +0000</pubDate>
+      <guid>https://lyderic.com/blog/observations/remplacer-la-charite-par-largent/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>nihil</title>
+      <link>https://lyderic.com/blog/observations/nihil/</link>
+      <pubDate>Sat, 16 Sep 2017 21:10:04 +0000</pubDate>
+      <guid>https://lyderic.com/blog/observations/nihil/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Building minio&#39;s mc and restic on termux</title>
+      <link>https://lyderic.com/blog/technology/building-minios-mc-and-restic-on-termux/</link>
+      <pubDate>Thu, 07 Sep 2017 13:50:11 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/building-minios-mc-and-restic-on-termux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Find out compiler version of a go binary</title>
+      <link>https://lyderic.com/blog/technology/how-to-find-out-compiler-version-of-a-go-binary/</link>
+      <pubDate>Mon, 04 Sep 2017 12:45:45 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/how-to-find-out-compiler-version-of-a-go-binary/</guid>
+      <description>clever use of gdb</description>
+    </item>
+    <item>
+      <title>Generate an SSH public key</title>
+      <link>https://lyderic.com/blog/technology/generate-an-ssh-public-key/</link>
+      <pubDate>Sun, 06 Aug 2017 06:03:17 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/generate-an-ssh-public-key/</guid>
+      <description>Your private key also contains your public key</description>
+    </item>
+    <item>
+      <title>git: list all commit hashes</title>
+      <link>https://lyderic.com/blog/technology/git-list-all-commit-hashes/</link>
+      <pubDate>Fri, 02 Jun 2017 06:46:33 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/git-list-all-commit-hashes/</guid>
+      <description>and nothing else</description>
+    </item>
+    <item>
+      <title>git: list all files in a commit</title>
+      <link>https://lyderic.com/blog/technology/git-list-all-files-in-a-commit/</link>
+      <pubDate>Fri, 02 Jun 2017 06:40:07 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/git-list-all-files-in-a-commit/</guid>
+      <description>ls, but for git</description>
+    </item>
+    <item>
+      <title>Learning go</title>
+      <link>https://lyderic.com/blog/technology/learning-go/</link>
+      <pubDate>Thu, 27 Apr 2017 09:07:08 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/learning-go/</guid>
+      <description>what a nice language</description>
+    </item>
+    <item>
+      <title>First glitch with musl</title>
+      <link>https://lyderic.com/blog/technology/first-glitch-with-musl/</link>
+      <pubDate>Fri, 31 Mar 2017 09:53:07 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/first-glitch-with-musl/</guid>
+      <description>no like JDBC driver</description>
+    </item>
+    <item>
+      <title>Dummy SMTP server for testing</title>
+      <link>https://lyderic.com/blog/technology/dummy-smtp-server-for-testing/</link>
+      <pubDate>Mon, 27 Mar 2017 14:16:54 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/dummy-smtp-server-for-testing/</guid>
+      <description>FakeSMTP</description>
+    </item>
+    <item>
+      <title>lua: print in colour</title>
+      <link>https://lyderic.com/blog/technology/lua-print-in-colour/</link>
+      <pubDate>Wed, 22 Feb 2017 15:31:07 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/lua-print-in-colour/</guid>
+      <description>use ANSI escape codes</description>
+    </item>
+    <item>
+      <title>Enfance</title>
+      <link>https://lyderic.com/blog/observations/enfance/</link>
+      <pubDate>Sat, 28 Jan 2017 18:27:57 +0000</pubDate>
+      <guid>https://lyderic.com/blog/observations/enfance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Méfiance</title>
+      <link>https://lyderic.com/blog/observations/mefiance/</link>
+      <pubDate>Wed, 25 Jan 2017 15:08:23 +0000</pubDate>
+      <guid>https://lyderic.com/blog/observations/mefiance/</guid>
+      <description>c&amp;rsquo;est mieux quand ?</description>
+    </item>
+    <item>
+      <title>« Ils »</title>
+      <link>https://lyderic.com/blog/observations/ils/</link>
+      <pubDate>Fri, 20 Jan 2017 21:06:38 +0000</pubDate>
+      <guid>https://lyderic.com/blog/observations/ils/</guid>
+      <description>ce sont les méchants</description>
+    </item>
+    <item>
+      <title>Il n&#39;y a plus de société</title>
+      <link>https://lyderic.com/blog/observations/il-ny-a-plus-de-societe/</link>
+      <pubDate>Thu, 19 Jan 2017 08:44:48 +0000</pubDate>
+      <guid>https://lyderic.com/blog/observations/il-ny-a-plus-de-societe/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Toujours...</title>
+      <link>https://lyderic.com/blog/observations/toujours/</link>
+      <pubDate>Sun, 15 Jan 2017 14:15:57 +0000</pubDate>
+      <guid>https://lyderic.com/blog/observations/toujours/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Athéisme ?</title>
+      <link>https://lyderic.com/blog/observations/atheisme/</link>
+      <pubDate>Fri, 06 Jan 2017 10:08:56 +0000</pubDate>
+      <guid>https://lyderic.com/blog/observations/atheisme/</guid>
+      <description>ne pas ignorer le sentiment religieux</description>
+    </item>
+    <item>
+      <title>Leopardi</title>
+      <link>https://lyderic.com/blog/observations/leopardi/</link>
+      <pubDate>Thu, 05 Jan 2017 21:51:15 +0000</pubDate>
+      <guid>https://lyderic.com/blog/observations/leopardi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Simplified getopt for lua</title>
+      <link>https://lyderic.com/blog/technology/simplified-getopt-for-lua/</link>
+      <pubDate>Thu, 17 Nov 2016 18:34:42 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/simplified-getopt-for-lua/</guid>
+      <description>my own implementation</description>
+    </item>
+    <item>
+      <title>gvim on Ubuntu</title>
+      <link>https://lyderic.com/blog/technology/gvim-on-ubuntu/</link>
+      <pubDate>Sat, 12 Nov 2016 18:39:25 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/gvim-on-ubuntu/</guid>
+      <description>how to build</description>
+    </item>
+    <item>
+      <title>git from source on Centos 7</title>
+      <link>https://lyderic.com/blog/technology/git-from-source-on-centos-7/</link>
+      <pubDate>Sat, 12 Nov 2016 13:21:48 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/git-from-source-on-centos-7/</guid>
+      <description>I want -C</description>
+    </item>
+    <item>
+      <title>Continue your loops in lua</title>
+      <link>https://lyderic.com/blog/technology/continue-your-loops-in-lua/</link>
+      <pubDate>Thu, 10 Nov 2016 15:06:27 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/continue-your-loops-in-lua/</guid>
+      <description>use goto</description>
+    </item>
+    <item>
+      <title>Ternary operator in lua</title>
+      <link>https://lyderic.com/blog/technology/ternary-operator-in-lua/</link>
+      <pubDate>Thu, 10 Nov 2016 12:23:50 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/ternary-operator-in-lua/</guid>
+      <description>and&amp;hellip;or</description>
+    </item>
+    <item>
+      <title>printf in lua</title>
+      <link>https://lyderic.com/blog/technology/printf-in-lua/</link>
+      <pubDate>Tue, 08 Nov 2016 15:43:23 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/printf-in-lua/</guid>
+      <description>string.format is too long</description>
+    </item>
+    <item>
+      <title>vim with lua</title>
+      <link>https://lyderic.com/blog/technology/vim-with-lua/</link>
+      <pubDate>Mon, 07 Nov 2016 17:15:47 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/vim-with-lua/</guid>
+      <description>since then I learned vimscript and kinda like it</description>
+    </item>
+    <item>
+      <title>Connais-toi toi-même</title>
+      <link>https://lyderic.com/blog/observations/connais-toi-toi-meme/</link>
+      <pubDate>Fri, 04 Nov 2016 10:44:51 +0000</pubDate>
+      <guid>https://lyderic.com/blog/observations/connais-toi-toi-meme/</guid>
+      <description>Γνῶθι σεαυτόν</description>
+    </item>
+    <item>
+      <title>Un culte à l&#39;ignorance</title>
+      <link>https://lyderic.com/blog/observations/un-culte-a-lignorance/</link>
+      <pubDate>Mon, 17 Oct 2016 08:22:30 +0000</pubDate>
+      <guid>https://lyderic.com/blog/observations/un-culte-a-lignorance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Évolution</title>
+      <link>https://lyderic.com/blog/observations/evolution/</link>
+      <pubDate>Wed, 28 Sep 2016 16:28:16 +0000</pubDate>
+      <guid>https://lyderic.com/blog/observations/evolution/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Anatole France</title>
+      <link>https://lyderic.com/blog/observations/anatole-france/</link>
+      <pubDate>Tue, 05 Jul 2016 16:28:50 +0000</pubDate>
+      <guid>https://lyderic.com/blog/observations/anatole-france/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ansible is agentless, but...</title>
+      <link>https://lyderic.com/blog/technology/ansible-is-agentless-but/</link>
+      <pubDate>Thu, 23 Jun 2016 16:15:02 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/ansible-is-agentless-but/</guid>
+      <description>python is needed on clients</description>
+    </item>
+    <item>
+      <title>For K&amp;C, world is master in French</title>
+      <link>https://lyderic.com/blog/technology/for-kc-world-is-master-in-french/</link>
+      <pubDate>Fri, 13 May 2016 16:20:46 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/for-kc-world-is-master-in-french/</guid>
+      <description>hello, world</description>
+    </item>
+    <item>
+      <title>La mort de Jules César</title>
+      <link>https://lyderic.com/blog/observations/la-mort-de-jules-cesar/</link>
+      <pubDate>Wed, 11 May 2016 13:58:47 +0000</pubDate>
+      <guid>https://lyderic.com/blog/observations/la-mort-de-jules-cesar/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>C in sh</title>
+      <link>https://lyderic.com/blog/technology/c-in-sh/</link>
+      <pubDate>Thu, 14 Apr 2016 16:22:02 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/c-in-sh/</guid>
+      <description>21st Century C</description>
+    </item>
+    <item>
+      <title>Busybox, compile one applet only</title>
+      <link>https://lyderic.com/blog/technology/busybox-compile-one-applet-only/</link>
+      <pubDate>Tue, 12 Apr 2016 16:22:46 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/busybox-compile-one-applet-only/</guid>
+      <description>make menuconfig</description>
+    </item>
+    <item>
+      <title>pfSense notifications with Sendgrid</title>
+      <link>https://lyderic.com/blog/technology/pfsense-notifications-with-sendgrid/</link>
+      <pubDate>Fri, 08 Apr 2016 16:23:47 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/pfsense-notifications-with-sendgrid/</guid>
+      <description>get email notifications</description>
+    </item>
+    <item>
+      <title>Fast, really?</title>
+      <link>https://lyderic.com/blog/technology/fast-really/</link>
+      <pubDate>Sat, 26 Mar 2016 16:44:00 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/fast-really/</guid>
+      <description>no need to be fast, just need no ads</description>
+    </item>
+    <item>
+      <title>Serge Brussolo : immersion totale</title>
+      <link>https://lyderic.com/blog/observations/serge-brussolo--immersion-totale/</link>
+      <pubDate>Fri, 18 Mar 2016 16:31:19 +0000</pubDate>
+      <guid>https://lyderic.com/blog/observations/serge-brussolo--immersion-totale/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tabular display in Linux terminal</title>
+      <link>https://lyderic.com/blog/technology/tabular-display-in-linux-terminal/</link>
+      <pubDate>Tue, 15 Mar 2016 16:46:36 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/tabular-display-in-linux-terminal/</guid>
+      <description>the &amp;lsquo;column&amp;rsquo; command</description>
+    </item>
+    <item>
+      <title>Why no busybox for Android</title>
+      <link>https://lyderic.com/blog/technology/why-no-busybox-for-android/</link>
+      <pubDate>Thu, 10 Mar 2016 16:45:04 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/why-no-busybox-for-android/</guid>
+      <description>no vi, no ed</description>
+    </item>
+    <item>
+      <title>Poor Man&#39;s Service Starter</title>
+      <link>https://lyderic.com/blog/technology/poor-mans-service-starter/</link>
+      <pubDate>Mon, 07 Mar 2016 16:45:34 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/poor-mans-service-starter/</guid>
+      <description>crontab&amp;rsquo;s @reboot</description>
+    </item>
+    <item>
+      <title>Compiling vim on a Raspberry Pi 3</title>
+      <link>https://lyderic.com/blog/technology/compiling-vim-on-a-raspberry-pi-3/</link>
+      <pubDate>Wed, 02 Mar 2016 16:46:07 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/compiling-vim-on-a-raspberry-pi-3/</guid>
+      <description>slow, but ok</description>
+    </item>
+    <item>
+      <title>Études Rebatiennes</title>
+      <link>https://lyderic.com/blog/observations/etudes-rebatiennes/</link>
+      <pubDate>Sun, 28 Feb 2016 16:32:54 +0000</pubDate>
+      <guid>https://lyderic.com/blog/observations/etudes-rebatiennes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Langues universelles</title>
+      <link>https://lyderic.com/blog/observations/langues-universelles/</link>
+      <pubDate>Tue, 23 Feb 2016 16:33:38 +0000</pubDate>
+      <guid>https://lyderic.com/blog/observations/langues-universelles/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Informaticien littérateur</title>
+      <link>https://lyderic.com/blog/observations/informaticien-litterateur/</link>
+      <pubDate>Mon, 15 Feb 2016 16:34:32 +0000</pubDate>
+      <guid>https://lyderic.com/blog/observations/informaticien-litterateur/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Do you need Docker if you have JARs?</title>
+      <link>https://lyderic.com/blog/technology/do-you-need-docker-if-you-have-jars/</link>
+      <pubDate>Fri, 12 Feb 2016 16:47:34 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/do-you-need-docker-if-you-have-jars/</guid>
+      <description>well&amp;hellip; not really</description>
+    </item>
+    <item>
+      <title>base64 images in HTML pages</title>
+      <link>https://lyderic.com/blog/technology/base64-images-in-html-pages/</link>
+      <pubDate>Fri, 12 Feb 2016 16:47:03 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/base64-images-in-html-pages/</guid>
+      <description>base64 is not just for emails</description>
+    </item>
+    <item>
+      <title>Ulysse</title>
+      <link>https://lyderic.com/blog/observations/ulysse/</link>
+      <pubDate>Fri, 12 Feb 2016 16:35:16 +0000</pubDate>
+      <guid>https://lyderic.com/blog/observations/ulysse/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Debloat docker</title>
+      <link>https://lyderic.com/blog/technology/debloat-docker/</link>
+      <pubDate>Thu, 11 Feb 2016 16:48:44 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/debloat-docker/</guid>
+      <description>alpine, not ubuntu</description>
+    </item>
+    <item>
+      <title>Busybox HTTPD</title>
+      <link>https://lyderic.com/blog/technology/busybox-httpd/</link>
+      <pubDate>Thu, 11 Feb 2016 16:48:11 +0000</pubDate>
+      <guid>https://lyderic.com/blog/technology/busybox-httpd/</guid>
+      <description>tiny web server</description>
+    </item>
+    <item>
+      <title>Lire de tout</title>
+      <link>https://lyderic.com/blog/observations/lire-de-tout/</link>
+      <pubDate>Thu, 11 Feb 2016 16:35:49 +0000</pubDate>
+      <guid>https://lyderic.com/blog/observations/lire-de-tout/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

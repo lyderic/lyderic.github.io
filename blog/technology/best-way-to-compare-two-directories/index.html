@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Best Way to Compare Two Directories | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>Best Way to Compare Two Directories</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2024-03-13T12:50:20&#43;01:00">13 mars 2024</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <p>I needed to compare two directories, on two machines, containing 32GB+ of thousands of files. The <em>rsync</em> command was what I needed.</p>
+<p><em>rsync</em> has an -i option: --itemize-changes. What it does is display a summary of all the changes. Coupled with the -n option (--dry-run) and the -r option (--recursive), it allows to efficiently compare directories, possibly over ssh.</p>
+<p>The basic command is:</p>
+<pre><code>$ rsync -rin -e ssh /path/to/local/dir/ remote:/path/to/remote/dir/
+</code></pre>
+<p>The output is somewhat cryptic, but all is cleary explained in <em>rsync</em>&rsquo;s manpage.</p>
+
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>

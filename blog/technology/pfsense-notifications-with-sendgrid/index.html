@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>pfSense notifications with Sendgrid | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>pfSense notifications with Sendgrid</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2016-04-08T16:23:47&#43;00:00">8 avril 2016</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <p>To have your pfSense device send you email notifications, you can configure it like so:</p>
+<ol>
+<li>
+<p>Create yourself a Sendgrid account on <a href="https://sendgrid.com">sendgrid.com</a></p>
+</li>
+<li>
+<p>In pfSense (I currently use version 2.2.6), go to:<br>
+&lsquo;System &gt; Advanced &gt; Notifications (tab)&rsquo;</p>
+</li>
+<li>
+<p>Set up the &lsquo;SMTP E-Mail&rsquo; section as follows:</p>
+</li>
+</ol>
+<ul>
+<li>E-Mail server: smtp.sendgrid.net</li>
+<li>SMTP Port of E-Mail server: 465</li>
+<li>Secure SMTP Connection: check the box entitled: &lsquo;Enable SMTP over SSL/TLS&rsquo;</li>
+<li>Put whatever you want and need in the field &lsquo;From e-mail address&rsquo;</li>
+<li>Notification E-Mail address: This is the address the notifications emails should be sent to</li>
+<li>Your Sendgrid credentials are to go to the fields: &lsquo;Notification E-Mail auth username (optional)&rsquo; and &lsquo;Notification E-Mail auth password&rsquo;</li>
+<li>Notification E-Mail auth mechanism: PLAIN</li>
+</ul>
+<p>You can test by pressing the button &lsquo;Test SMTP&rsquo; (duh!) and you can see the completion in the logs (Status &gt; System Logs).</p>
+
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>

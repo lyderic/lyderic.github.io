@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Building minio&#39;s mc and restic on termux | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>Building minio&#39;s mc and restic on termux</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2017-09-07T13:50:11&#43;00:00">7 septembre 2017</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <p>If you use the binaries provided by minio and restic to run the &lsquo;mc&rsquo; and &lsquo;restic&rsquo; commands on android&rsquo;s termux, it won&rsquo;t work, due to restriction on DNS resolution, you need to build them yourself.</p>
+<p>This is how to do it:</p>
+<h3 id="mc">MC</h3>
+<pre tabindex="0"><code>$ go get -d github.com/minio/mc
+$ cd $HOME/go/src/github.com/minio/mc
+$ GOPATH=$HOME/go make
+</code></pre><h3 id="restic">RESTIC</h3>
+<pre tabindex="0"><code>$ git clone https://github.com/restic/restic
+$ cd restic
+$ go run build.go -v --enable-cgo
+</code></pre>
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>
