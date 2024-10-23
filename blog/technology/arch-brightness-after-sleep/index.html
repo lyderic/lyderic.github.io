@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Brightness management on Arch Linux | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>Brightness management on Arch Linux</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2024-10-23T11:16:56&#43;02:00">23 octobre 2024</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <p>Background: in October 2024, after what I think was a kernel update, my AMD Thinkpad X13 started to manifest an annoying behaviour: when waking up from sleep (i.e. after opening the lid), the screen brightness was always back to 255 (maximum brightness). This is what I did to fix the issue.</p>
+<h1 id="documentation">Documentation</h1>
+<ul>
+<li><a href="https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#Combined_sleep/resume_unit">Arch wiki suspend</a></li>
+<li><a href="https://wiki.archlinux.org/title/Backlight#Backlight_is_always_at_full_brightness_after_a_reboot_with_amdgpu_driver">Arch wiki brightness</a></li>
+</ul>
+<h1 id="where-are-the-values">Where are the values?</h1>
+<p>I found the brightness values in <strong>/sys/class/backlight/amdgpu_bl1</strong>.</p>
+<p>Files are:</p>
+<ul>
+<li>actual_brightness</li>
+<li>brightness</li>
+<li>max_brightness</li>
+</ul>
+<h1 id="the-fix">The fix</h1>
+<h4 id="i-created-the-following-script">I created the following script:</h4>
+<p><strong>/usr/local/bin/amdbrightness</strong></p>
+<p>Note: to set the <strong>BRIGHTNESS_PCI_FILE</strong> variable, I ran <code>lspci</code> to find out the pci value to use.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>BRIGHTNESS_PCI_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pci-0000:05:00.0:backlight:amdgpu_bl1&#34;</span>
+</span></span><span style="display:flex;"><span>SYSTEMD_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/var/lib/systemd/backlight&#34;</span>
+</span></span><span style="display:flex;"><span>SYSTEMD_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>SYSTEMD_DIR<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span>BRIGHTNESS_PCI_FILE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>BRIGHTNESS_FILE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/sys/class/backlight/amdgpu_bl1/brightness&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>main<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">[</span> -z $1 <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> usage
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>1<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> in
+</span></span><span style="display:flex;"><span>		save<span style="color:#f92672">)</span>    check_root $1 ; save ;;
+</span></span><span style="display:flex;"><span>		restore<span style="color:#f92672">)</span> check_root $1 ; restore ;;
+</span></span><span style="display:flex;"><span>		status<span style="color:#f92672">)</span>  status ;;
+</span></span><span style="display:flex;"><span>		*<span style="color:#f92672">)</span> echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>1<span style="color:#e6db74">}</span><span style="color:#e6db74">: invalid!&#34;</span> ; exit <span style="color:#ae81ff">42</span> ;;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">esac</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>check_root<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">[</span> <span style="color:#66d9ef">$(</span>id -u<span style="color:#66d9ef">)</span> -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>		echo -e <span style="color:#e6db74">&#34;\e[31;1mYou have to be root to run </span>$1<span style="color:#e6db74">!\e[m&#34;</span>
+</span></span><span style="display:flex;"><span>		exit <span style="color:#ae81ff">42</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>save<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	cat <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>BRIGHTNESS_FILE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt; <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>SYSTEMD_FILE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>	echo <span style="color:#e6db74">&#34;Brightness saved to: </span><span style="color:#66d9ef">$(</span>cat <span style="color:#e6db74">${</span>BRIGHTNESS_FILE<span style="color:#e6db74">}</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>restore<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	sleep .75
+</span></span><span style="display:flex;"><span>	cat <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>SYSTEMD_FILE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt; <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>BRIGHTNESS_FILE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>	echo <span style="color:#e6db74">&#34;Brightness restored to: </span><span style="color:#66d9ef">$(</span>cat <span style="color:#e6db74">${</span>BRIGHTNESS_FILE<span style="color:#e6db74">}</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>status<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	buffer<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>mktemp<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> file in <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>SYSTEMD_FILE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>BRIGHTNESS_FILE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> ; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>		echo -n <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>file<span style="color:#e6db74">}</span><span style="color:#e6db74"> &#34;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>buffer<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>		cat <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>file<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> &gt;&gt; <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>buffer<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>	cat <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>buffer<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> | column -t
+</span></span><span style="display:flex;"><span>	rm <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>buffer<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>usage<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>	echo <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>basename $0<span style="color:#66d9ef">)</span><span style="color:#e6db74"> save|restore|status&#34;</span>
+</span></span><span style="display:flex;"><span>	exit <span style="color:#ae81ff">23</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>main <span style="color:#e6db74">${</span>@<span style="color:#e6db74">}</span>
+</span></span></code></pre></div><h4 id="i-associated-this-script-with-the-following-systemd-services">I associated this script with the following systemd services:</h4>
+<p><strong>/etc/systemd/system/amdbrightness-save.service</strong></p>
+<pre tabindex="0"><code>[Unit]
+Description=save brightness before sleeping
+Before=suspend.target
+
+[Service]
+User=root
+Type=oneshot
+ExecStart=/usr/local/bin/amdbrightness save
+
+[Install]
+WantedBy=suspend.target
+</code></pre><p><strong>/etc/systemd/system/amdbrightness-restore.service</strong></p>
+<pre tabindex="0"><code>[Unit]
+Description=restore brightness at wake up from sleep
+After=suspend.target
+
+[Service]
+User=root
+Type=oneshot
+ExecStart=/usr/local/bin/amdbrightness restore
+
+[Install]
+WantedBy=suspend.target
+</code></pre><h2 id="i-then-installed-the-services">I then installed the services</h2>
+<pre tabindex="0"><code># systemctl daemon-reload
+# systemctl enable --now amdbrightness-save.service
+# systemctl enable --now amdbrightness-restore.service
+</code></pre>
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>
