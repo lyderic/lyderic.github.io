@@ -46,12 +46,12 @@
 
 	<div style="text-align:justify;margin-top:2em;">
   <p>Background: in October 2024, after what I think was a kernel update, my AMD Thinkpad X13 started to manifest an annoying behaviour: when waking up from sleep (i.e. after opening the lid), the screen brightness was always back to 255 (maximum brightness). This is what I did to fix the issue.</p>
-<h1 id="documentation">Documentation</h1>
+<h2 id="documentation">Documentation</h2>
 <ul>
 <li><a href="https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#Combined_sleep/resume_unit">Arch wiki suspend</a></li>
 <li><a href="https://wiki.archlinux.org/title/Backlight#Backlight_is_always_at_full_brightness_after_a_reboot_with_amdgpu_driver">Arch wiki brightness</a></li>
 </ul>
-<h1 id="where-are-the-values">Where are the values?</h1>
+<h2 id="where-are-the-values">Where are the values?</h2>
 <p>I found the brightness values in <strong>/sys/class/backlight/amdgpu_bl1</strong>.</p>
 <p>Files are:</p>
 <ul>
@@ -59,8 +59,8 @@
 <li>brightness</li>
 <li>max_brightness</li>
 </ul>
-<h1 id="the-fix">The fix</h1>
-<h4 id="i-created-the-following-script">I created the following script:</h4>
+<h2 id="the-fix">The fix</h2>
+<h5 id="i-created-the-following-script">I created the following script:</h5>
 <p><strong>/usr/local/bin/amdbrightness</strong></p>
 <p>Note: to set the <strong>BRIGHTNESS_PCI_FILE</strong> variable, I ran <code>lspci</code> to find out the pci value to use.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
@@ -114,36 +114,36 @@
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>main <span style="color:#e6db74">${</span>@<span style="color:#e6db74">}</span>
-</span></span></code></pre></div><h4 id="i-associated-this-script-with-the-following-systemd-services">I associated this script with the following systemd services:</h4>
+</span></span></code></pre></div><h5 id="i-associated-this-script-with-the-following-systemd-services">I associated this script with the following systemd services:</h5>
 <p><strong>/etc/systemd/system/amdbrightness-save.service</strong></p>
-<pre tabindex="0"><code>[Unit]
-Description=save brightness before sleeping
-Before=suspend.target
-
-[Service]
-User=root
-Type=oneshot
-ExecStart=/usr/local/bin/amdbrightness save
-
-[Install]
-WantedBy=suspend.target
-</code></pre><p><strong>/etc/systemd/system/amdbrightness-restore.service</strong></p>
-<pre tabindex="0"><code>[Unit]
-Description=restore brightness at wake up from sleep
-After=suspend.target
-
-[Service]
-User=root
-Type=oneshot
-ExecStart=/usr/local/bin/amdbrightness restore
-
-[Install]
-WantedBy=suspend.target
-</code></pre><h2 id="i-then-installed-the-services">I then installed the services</h2>
-<pre tabindex="0"><code># systemctl daemon-reload
-# systemctl enable --now amdbrightness-save.service
-# systemctl enable --now amdbrightness-restore.service
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#e6db74">save brightness before sleeping</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Before</span><span style="color:#f92672">=</span><span style="color:#e6db74">suspend.target</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">User</span><span style="color:#f92672">=</span><span style="color:#e6db74">root</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Type</span><span style="color:#f92672">=</span><span style="color:#e6db74">oneshot</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStart</span><span style="color:#f92672">=</span><span style="color:#e6db74">/usr/local/bin/amdbrightness save</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">suspend.target</span>
+</span></span></code></pre></div><p><strong>/etc/systemd/system/amdbrightness-restore.service</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#e6db74">restore brightness at wake up from sleep</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">After</span><span style="color:#f92672">=</span><span style="color:#e6db74">suspend.target</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">User</span><span style="color:#f92672">=</span><span style="color:#e6db74">root</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Type</span><span style="color:#f92672">=</span><span style="color:#e6db74">oneshot</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStart</span><span style="color:#f92672">=</span><span style="color:#e6db74">/usr/local/bin/amdbrightness restore</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">suspend.target</span>
+</span></span></code></pre></div><h4 id="i-then-installed-the-services">I then installed the services</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo systemctl daemon-reload
+</span></span><span style="display:flex;"><span>$ sudo systemctl enable --now amdbrightness-save.service
+</span></span><span style="display:flex;"><span>$ sudo systemctl enable --now amdbrightness-restore.service
+</span></span></code></pre></div>
 	</div>
   
 
