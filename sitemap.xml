@@ -3,12 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://lyderic.com/blog/</loc>
-    <lastmod>2024-10-23T11:16:56+02:00</lastmod>
+    <lastmod>2024-10-26T09:58:46+02:00</lastmod>
   </url><url>
-    <loc>https://lyderic.com/blog/technology/arch-brightness-after-sleep/</loc>
-    <lastmod>2024-10-23T11:16:56+02:00</lastmod>
+    <loc>https://lyderic.com/blog/technology/mapping-fix/</loc>
+    <lastmod>2024-10-26T09:58:46+02:00</lastmod>
   </url><url>
     <loc>https://lyderic.com/blog/technology/</loc>
+    <lastmod>2024-10-26T09:58:46+02:00</lastmod>
+  </url><url>
+    <loc>https://lyderic.com/blog/technology/arch-brightness-after-sleep/</loc>
     <lastmod>2024-10-23T11:16:56+02:00</lastmod>
   </url><url>
     <loc>https://lyderic.com/blog/technology/sqlite-in-git/</loc>

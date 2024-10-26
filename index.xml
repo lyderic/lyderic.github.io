@@ -6,8 +6,15 @@
     <description>Recent content in Bienvenue dans les mondes de Lydéric on De Mundis Lyderici</description>
     <generator>Hugo</generator>
     <language>fr-FR</language>
-    <lastBuildDate>Wed, 23 Oct 2024 11:16:56 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 26 Oct 2024 09:58:46 +0200</lastBuildDate>
     <atom:link href="https://lyderic.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to remap [[ and ]] in vim</title>
+      <link>https://lyderic.com/blog/technology/mapping-fix/</link>
+      <pubDate>Sat, 26 Oct 2024 09:58:46 +0200</pubDate>
+      <guid>https://lyderic.com/blog/technology/mapping-fix/</guid>
+      <description>overrule some ftplugins</description>
+    </item>
     <item>
       <title>Brightness management on Arch Linux</title>
       <link>https://lyderic.com/blog/technology/arch-brightness-after-sleep/</link>
