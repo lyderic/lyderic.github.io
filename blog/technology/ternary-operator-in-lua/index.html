@@ -46,12 +46,10 @@
 
 	<div style="text-align:justify;margin-top:2em;">
   <p>In Java, I very often have to do the following, to mark the plural when needed:</p>
-<pre><code>System.out.printf(&quot;Delivered: %d item%s&quot;, n, n &gt; 1 ? &quot;s&quot;, &quot;&quot;);
-</code></pre>
-<p>In Lua, there is no ternary operator, so this kind of elegant syntax might be compromised in this situation. Fortunately, there is an as nice workaround:</p>
-<pre><code>print(string.format(&quot;Delivered: %d item%s&quot;, n &gt; 1 and &quot;s&quot; or &quot;&quot;))
-</code></pre>
-<p>Thanks to <a href="https://hisham.hm/2011/05/04/luas-and-or-as-a-ternary-operator/">hisham.hm</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Delivered: %d item%s&#34;</span>, n, n <span style="color:#f92672">&gt;</span> 1 <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;s&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>);
+</span></span></code></pre></div><p>In Lua, there is no ternary operator, so this kind of elegant syntax might be compromised in this situation. Fortunately, there is an as nice workaround:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>print(string.format(<span style="color:#e6db74">&#34;Delivered: %d item%s&#34;</span>, n <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">and</span> <span style="color:#e6db74">&#34;s&#34;</span> <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;&#34;</span>))
+</span></span></code></pre></div><p>Thanks to <a href="https://hisham.hm/2011/05/04/luas-and-or-as-a-ternary-operator/">hisham.hm</a></p>
 
 	</div>
   
