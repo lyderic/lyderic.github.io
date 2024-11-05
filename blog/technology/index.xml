@@ -6,8 +6,15 @@
     <description>Recent content in Technology (english) on De Mundis Lyderici</description>
     <generator>Hugo</generator>
     <language>fr-FR</language>
-    <lastBuildDate>Sat, 26 Oct 2024 09:58:46 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 05 Nov 2024 13:28:42 +0100</lastBuildDate>
     <atom:link href="https://lyderic.com/blog/technology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shell commands as git aliases</title>
+      <link>https://lyderic.com/blog/technology/git-alias-shell-command/</link>
+      <pubDate>Tue, 05 Nov 2024 13:28:42 +0100</pubDate>
+      <guid>https://lyderic.com/blog/technology/git-alias-shell-command/</guid>
+      <description>it&amp;rsquo;s like vim: prefix with &amp;lsquo;!&amp;rsquo;</description>
+    </item>
     <item>
       <title>How to remap [[ and ]] in vim</title>
       <link>https://lyderic.com/blog/technology/mapping-fix/</link>

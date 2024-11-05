@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shell commands as git aliases | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>Shell commands as git aliases</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2024-11-05T13:28:42&#43;01:00">5 novembre 2024</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <p>To save typing, I has a couple of aliases set up in git. For example, to get the last hash, I simply type <code>git hash</code>. I did this by setting up the following alias:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git config --global alias.hash <span style="color:#e6db74">&#39;git log -1 --pretty=%h&#39;</span>
+</span></span></code></pre></div><p>Now, I found out that basically <em>anything</em> can be aliased in this way. So one can create git commands with any shell command. The only thing is, if you use a non-git command, prefix it with <code>!</code>. This is how you&rsquo;d do it in vim. Silly example, to demonstrate:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git config --global alias.foo <span style="color:#e6db74">&#39;!echo foo&#39;</span>
+</span></span><span style="display:flex;"><span>$ git foo
+</span></span><span style="display:flex;"><span>foo
+</span></span></code></pre></div><p>This is very useful if you need to pipe the output of a git command to a shell filter like sed, awk, grep&hellip; Here a more useful example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git config --global alias.t <span style="color:#e6db74">&#39;!git show-ref --abbrev=7 --tags | sed \&#34;s|refs/tags/||\&#34;&#39;</span>
+</span></span><span style="display:flex;"><span>$ git tag mytag 4d3h779
+</span></span><span style="display:flex;"><span>$ git t
+</span></span><span style="display:flex;"><span>4d3h779 mytag
+</span></span></code></pre></div>
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>
