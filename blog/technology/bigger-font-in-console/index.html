@@ -45,19 +45,20 @@
 	<hr />
 
 	<div style="text-align:justify;margin-top:2em;">
-  <p>On Archlinux, how to get bigger fonts in the console? (i.e. the text before we boot to Wayland)</p>
+  <p>On Archlinux, how to get bigger fonts in the console? (i.e. the text before we boot to Wayland).</p>
+<p>Run the following commands <strong>as root</strong>:</p>
 <ol>
 <li>Install terminus-font package</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># pacman -S terminus-font</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacman -S terminus-font
 </span></span></code></pre></div><ol start="2">
 <li>Add a line to /etc/vconsole.conf</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># echo &#39;FONT=ter-i28b&#39; | tee -a /etc/vconsole.conf</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;FONT=ter-i28b&#39;</span> | tee -a /etc/vconsole.conf
 </span></span></code></pre></div><ol start="3">
 <li>Rebuild init ramdisk:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># mkinitcpio -P</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkinitcpio -P
 </span></span></code></pre></div><ol start="4">
 <li>Reboot and be amazed ;-)</li>
 </ol>
