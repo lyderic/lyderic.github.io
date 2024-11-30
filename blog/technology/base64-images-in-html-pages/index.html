@@ -50,13 +50,17 @@
 <ul>
 <li>Convert your favicon to base64:</li>
 </ul>
-<pre tabindex="0"><code>$ base64 -w 0 favicon.ico
-</code></pre><p>The <em>-w</em> switch is to have the whole string as a single line.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ base64 -w <span style="color:#ae81ff">0</span> favicon.ico
+</span></span></code></pre></div><p>The <code>-w</code> switch is to have the whole string as a single line.</p>
 <ul>
-<li>Include this entry in the <em><!-- raw HTML omitted --></em> section of your HTML page:</li>
+<li>Include this entry in the <code>&lt;head&gt;</code> section of your HTML page:</li>
 </ul>
-<pre tabindex="0"><code>&lt;link href=&#34;data:image/x-icon;base64,AAABAAE...fAAD//wAA&#34; rel=&#34;icon&#34; type=&#34;image/x-icon&#34; /&gt;
-</code></pre><p>I cut the base64 string a little for better visibility.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;data:image/x-icon;base64,AAABAAE...fAAD//wAA&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;icon&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image/x-icon&#34;</span>
+</span></span><span style="display:flex;"><span>/&gt;
+</span></span></code></pre></div><p>I cut the base64 string a little for better visibility.</p>
 <p>Another cool use of base64.</p>
 
 	</div>

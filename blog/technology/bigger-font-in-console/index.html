@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr-FR" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bigger-Font-in-Console | De Mundis Lyderici</title>
+<link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" media="screen" />
+<link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" media="screen and (prefers-color-scheme: dark)" />
+
+
+<link rel="stylesheet" href="/css/custom.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+	<div>
+		<a href="/">De Mundis Lyderici</a>
+	</div>
+	<div>
+		|
+			<a href="/blog/observations/">Observations</a> |
+			<a href="/blog/technology/">Technology</a> |
+			<a href="/livres/">Mes livres</a> |
+	</div>
+</nav>
+
+
+<hr />
+
+  </header>
+  <main>
+    
+
+  <h3>Bigger-Font-in-Console</h3>
+
+  
+	
+
+	<div style="text-align:right;font-style:italic;">
+		<time datetime="2024-11-30T10:04:16&#43;01:00">30 novembre 2024</time>
+	</div>
+
+	<hr />
+
+	<div style="text-align:justify;margin-top:2em;">
+  <p>On Archlinux, how to get bigger fonts in the console? (i.e. the text before we boot to Wayland)</p>
+<ol>
+<li>Install terminus-font package</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># pacman -S terminus-font</span>
+</span></span></code></pre></div><ol start="2">
+<li>Add a line to /etc/vconsole.conf</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># echo &#39;FONT=ter-i28b&#39; | tee -a /etc/vconsole.conf</span>
+</span></span></code></pre></div><ol start="3">
+<li>Rebuild init ramdisk:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># mkinitcpio -P</span>
+</span></span></code></pre></div><ol start="4">
+<li>Reboot and be amazed ;-)</li>
+</ol>
+
+	</div>
+  
+
+
+
+  </main>
+  <footer>
+    <p style="font-size:small;font-style:italic;text-align:right;">&copy; Lydéric Landry, Luxembourg 2024
+
+
+<script src="/js/main.js"></script>
+
+  </footer>
+</body>
+</html>
