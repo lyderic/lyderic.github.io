@@ -6,8 +6,15 @@
     <description>Recent content in Bienvenue dans les mondes de Lydéric on De Mundis Lyderici</description>
     <generator>Hugo</generator>
     <language>fr-FR</language>
-    <lastBuildDate>Sun, 08 Dec 2024 08:18:22 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 08 Dec 2024 09:50:01 +0100</lastBuildDate>
     <atom:link href="https://lyderic.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup Firefox</title>
+      <link>https://lyderic.com/blog/technology/setup-firefox/</link>
+      <pubDate>Sun, 08 Dec 2024 09:50:01 +0100</pubDate>
+      <guid>https://lyderic.com/blog/technology/setup-firefox/</guid>
+      <description>what to do on a whole new instance</description>
+    </item>
     <item>
       <title>Make your Firefox bigger</title>
       <link>https://lyderic.com/blog/technology/bigger-firefox/</link>
