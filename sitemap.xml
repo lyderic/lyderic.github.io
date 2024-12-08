@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://lyderic.com/blog/technology/bigger-font-in-console/</loc>
-    <lastmod>2024-11-30T10:04:16+01:00</lastmod>
-  </url><url>
     <loc>https://lyderic.com/blog/</loc>
-    <lastmod>2024-11-30T10:04:16+01:00</lastmod>
+    <lastmod>2024-12-08T08:18:22+01:00</lastmod>
+  </url><url>
+    <loc>https://lyderic.com/blog/technology/bigger-firefox/</loc>
+    <lastmod>2024-12-08T08:18:22+01:00</lastmod>
   </url><url>
     <loc>https://lyderic.com/blog/technology/</loc>
+    <lastmod>2024-12-08T08:18:22+01:00</lastmod>
+  </url><url>
+    <loc>https://lyderic.com/blog/technology/bigger-font-in-console/</loc>
     <lastmod>2024-11-30T10:04:16+01:00</lastmod>
   </url><url>
     <loc>https://lyderic.com/blog/technology/thinkpad-trackpoint-sensitivity/</loc>

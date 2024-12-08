@@ -45,7 +45,7 @@
 	<hr />
 
 	<div style="text-align:justify;margin-top:2em;">
-  <p>To save typing, I has a couple of aliases set up in git. For example, to get the last hash, I simply type <code>git hash</code>. I did this by setting up the following alias:</p>
+  <p>To save typing, I have a couple of aliases set up in git. For example, to get the last hash, I simply type <code>git hash</code>. I did this by setting up the following alias:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git config --global alias.hash <span style="color:#e6db74">&#39;git log -1 --pretty=%h&#39;</span>
 </span></span></code></pre></div><p>Now, I found out that basically <em>anything</em> can be aliased in this way. So one can create git commands with any shell command. The only thing is, if you use a non-git command, prefix it with <code>!</code>. This is how you&rsquo;d do it in vim. Silly example, to demonstrate:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git config --global alias.foo <span style="color:#e6db74">&#39;!echo foo&#39;</span>
